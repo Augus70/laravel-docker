@@ -68,3 +68,7 @@ Route::get('/vistaHome', function () {
 
 // ruta con controlador para la vista
 Route::get('/vistaHome2', [CursoController::class, 'getVistaChild']);
+
+Route::view('/mostrar','display', ['message' => '<p>Augusto</p>'])->name('display');
+Route::view('/incluir','incluir');
+Route::get('/directivas',[AdminUserController::class, 'index']);

@@ -55,7 +55,10 @@
                     <h1 class="mb-1 font-medium">Let's get started {{ @$name }}</h1>
                     {{-- x-alert con variable title --}}
                     {{-- <x-alert title={{ $title }}/> --}}
-                    <x-alert :title="$title" />
+                    <x-alert :title="$title" class="my-class" data-id="123">
+                        <h1>Este es el contenido pasado a slot</h1>
+                        <x-slot:subtitle>Este es el titulo pasado a slot title</x-slot:subtitle>
+                    </x-alert>
                     <p class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">Laravel has an incredibly rich ecosystem. <br>We suggest starting with the following.</p>
                     <ul class="flex flex-col mb-4 lg:mb-6">
                         <li class="flex items-center gap-4 py-2 relative before:border-l before:border-[#e3e3e0] dark:before:border-[#3E3E3A] before:top-1/2 before:bottom-0 before:left-[0.4rem] before:absolute">

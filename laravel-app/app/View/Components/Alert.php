@@ -26,4 +26,26 @@ class Alert extends Component
     {
         return view('components.alert');
     }
+
+    // ejemplo de un método que retorna un array
+    public function languajes($language)
+    {
+        return [
+            'PHP',
+            'JavaScript',
+            'Java',
+            'C#',
+            'C++',
+            'Ruby',
+            'Swift',
+            'Go',
+            'Rust',
+            $language,
+        ];
+    }
+    // ejemplo de un metodo que retorna un string
+    public function languaje()
+    {
+        return "El lenguaje fijo es RUST";
+    }
 }
