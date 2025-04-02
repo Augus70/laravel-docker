@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CursoController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\OperacionesController;
+use App\Http\Controllers\PostController;
 use App\Http\Middleware\Suscribed;
 
 Route::get('/', function () {
@@ -72,3 +73,12 @@ Route::get('/vistaHome2', [CursoController::class, 'getVistaChild']);
 Route::view('/mostrar','display', ['message' => '<p>Augusto</p>'])->name('display');
 Route::view('/incluir','incluir');
 Route::get('/directivas',[AdminUserController::class, 'index']);
+
+Route::controller(PostController::class)->group(function() {
+    // index
+    Route::get('/posts', 'index')->name('posts.index');
+    // create
+    Route::get('/posts/create', 'create')->name('posts.create');
+    // store
+    Route::post('/posts', 'store')->name('posts.store');
+});
